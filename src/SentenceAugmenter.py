@@ -79,9 +79,10 @@ class SentenceAugmenter:
 		return df.iloc[0]['sentence']
 
 if __name__=='__main__':
-	path = 'model/orde3_smoothing.lm'
+	path = 'model/order3_smoothing1.lm'
 	augmentation_rate = 0.3
-	raw_words = ['nyebelin','banget','bank','bni','tellernya','berbicara','dengan','kasar']
+	# raw_words = ['nyebelin','banget','bank','bni','tellernya','berbicara','dengan','kasar']
 
 	sa = SentenceAugmenter(path)
-	print(sa.augment_sentence(raw_words, augmentation_rate))
+	# print(sa.augment_sentence(raw_words, augmentation_rate))
+	print(sa.lm.logprob_strings('teller'.encode(), ['bni'.encode(), 'bank'.encode()]))
