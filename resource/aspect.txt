@@ -1,0 +1,6 @@
+others
+part
+machine
+price
+service
+fuel
